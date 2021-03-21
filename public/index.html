@@ -28,13 +28,45 @@
 				$("#win2txt").css("top", scrollTop*0.20+'px')
 				$("#diaryPen").css("top", (0-scrollTop+($("#win2").height()))*0.40+'px')
 
+				var windowBottom = $(this).scrollTop()+$(this).innerHeight();
+				$(".lf-fade").each(function(){
+					console.log("here");
+					var objBottom = $(this).offset().top + $(this).outerHeight();
+					console.log(objBottom-windowBottom);
+					if(objBottom<windowBottom){
+						if($(this).css('opacity')==0){
+							$(this).animate({
+								opacity:1,
+								paddingLeft:"-=1rem"
+							},400);
+						}
+					 } // else {
+					//  	if($(this).css('opacity')==1){$(this).fadeTo(400,0);}
+					// }
+				});
+				$(".lf-fade-top").each(function(){
+					console.log("here");
+					var objBottom = $(this).offset().top + $(this).outerHeight();
+					console.log(objBottom-windowBottom);
+					if(objBottom<windowBottom){
+						if($(this).css('opacity')==0){
+							$(this).animate({
+								opacity:1,
+								paddingTop:"-=1rem"
+							},400);
+						}
+					 } // else {
+					//  	if($(this).css('opacity')==1){$(this).fadeTo(400,0);}
+					// }
+				})
+			}).scroll();
 		/*		$(".sldElm").each(function(i,el){
 					var el=$(el)
 					if(el.visible(true)){
 						el.addClass('come-in')
 					}
 				})
-		*/	})
+		*/	
 		/*	$(".sldElm").each(function(i,el){
 				var el=$(el)
 				if(el.visible(true)){
@@ -55,6 +87,9 @@
 		}
 		section {
 			overflow: hidden;
+		}
+		.lf-fade, .lf-fade-top {
+			opacity: 0;
 		}
 		/*section:after{
 			content: '';
@@ -97,9 +132,9 @@
 		</section>
 		<section class="w-full h-screen bg-purple-300 bg-index_win_02 bg-cover bg-no-repeat" id="win2">
 			<div class="flex flex-col w-full h-full p-0 m-0" style="backdrop-filter: blur(5px);">
-				<div class="flex flex-col justify-center text-center h-1/4 w-full py-56 px-6 relative" id="win1txt">
-					<h1 class="text-5xl py-6">Journalling at its best</h1>
-					<div class="text-base px-20">
+				<div class="flex flex-col justify-center text-center h-1/4 w-full py-56 px-6 relative " id="win1txt">
+					<h1 class="text-5xl py-6 lf-fade-top">Journalling at its best</h1>
+					<div class="text-base px-20 lf-fade-top">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 					</div>
 				</div>
