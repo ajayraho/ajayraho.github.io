@@ -1,11 +1,13 @@
-# LifeCal  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://ajayraho.github.io/public/)
+# LifeCal
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://ajayraho.github.io/public/)
 
 ### _The ultimate modern journalling app_   
 
 > Life's worth journalling...
 > Record your life in Life's Calendar - *LifeCal*
+
 #### Features
-This multiplatform app provides 
+This multiplatform app provides easy and organized way of recording you precious life ;)
 
 ### Tech
 LifeCal uses a number of open source projects to work properly:
