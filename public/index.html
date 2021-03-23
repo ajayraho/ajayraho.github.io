@@ -4,77 +4,8 @@
 	<title>LifeCal</title>
 	<link rel="stylesheet" type="text/css" href="main.css"/>
 	<script type="text/javascript" src="jq.js"></script>
-	<script type="text/javascript">
-		/*(function($){
-			$.fn.visible = function(partial){
-				var $t=$(this),$w=$(window),viewTop=$w.scrollTop(),viewBottom=viewTop+$w.height(),
-					_top=$t.offset().top,_bottom=_top+$t.height(),compareTop=partial===true?_bottom:_top,compareBottom=partial===true?_top:_bottom;
-				return((compareBottom<=viewBottom)&&(compareTop>=viewTop));
-			};
-		})*/
-		$(function(){
-			$(window).scroll(function(){
-				var scrollTop = $(window).scrollTop()
-				if(scrollTop > $("#title").height()){
-					$("#title").css("background-color",'rgb(255,255,255)')
-					$("#title").css("color",'black')
-				} else {
-					$("#title").css("background-color",'transparent')
-					$("#title").css("color",'white')
-				}
-				$("#win1").css("background-position", "0px "+scrollTop*0.20+"px")
-				$("#win1txt").css("top", scrollTop*0.20+'px')
-				$("#win2").css("background-position", "0px "+(scrollTop-($("#win2").height()))*0.20+"px")
-				$("#win2txt").css("top", scrollTop*0.20+'px')
-				$("#diaryPen").css("top", (0-scrollTop+($("#win2").height()))*0.40+'px')
-
-				var windowBottom = $(this).scrollTop()+$(this).innerHeight();
-				$(".lf-fade").each(function(){
-					console.log("here");
-					var objBottom = $(this).offset().top + $(this).outerHeight();
-					console.log(objBottom-windowBottom);
-					if(objBottom<windowBottom){
-						if($(this).css('opacity')==0){
-							$(this).animate({
-								opacity:1,
-								paddingLeft:"-=1rem"
-							},400);
-						}
-					 } // else {
-					//  	if($(this).css('opacity')==1){$(this).fadeTo(400,0);}
-					// }
-				});
-				$(".lf-fade-top").each(function(){
-					console.log("here");
-					var objBottom = $(this).offset().top + $(this).outerHeight();
-					console.log(objBottom-windowBottom);
-					if(objBottom<windowBottom){
-						if($(this).css('opacity')==0){
-							$(this).animate({
-								opacity:1,
-								paddingTop:"-=1rem"
-							},400);
-						}
-					 } // else {
-					//  	if($(this).css('opacity')==1){$(this).fadeTo(400,0);}
-					// }
-				})
-			}).scroll();
-		/*		$(".sldElm").each(function(i,el){
-					var el=$(el)
-					if(el.visible(true)){
-						el.addClass('come-in')
-					}
-				})
-		*/	
-		/*	$(".sldElm").each(function(i,el){
-				var el=$(el)
-				if(el.visible(true)){
-					el.addClass('already-visible')
-				}
-			})*/
-		});
-	</script>
+	<script type="text/javascript" src="lodash.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 	<style type="text/css">
 		section:before{
 			content: '';
@@ -88,7 +19,7 @@
 		section {
 			overflow: hidden;
 		}
-		.lf-fade, .lf-fade-top {
+		.lf-fade-left, .lf-fade-top {
 			opacity: 0;
 		}
 		/*section:after{
@@ -101,16 +32,6 @@
 			background: rgba(255,255,255,0.6);
 			z-index: 1;
 			mix-blend-mode: color;
-		}
-		.come-in {
-			transform: translateY(100px);
-			animation: come-in 0.8s ease forwards;
-		}
-		.come-in:nth-child(odd){
-			animation-duration: 0.6s;
-		}
-		@keyframes come-in {
-			to { transform: translateY(0); }
 		}*/
 	</style>
 </head>
@@ -122,8 +43,8 @@
 		<section class="flex w-full h-screen justify-center items-center bg-index_win_01 bg-cover bg-no-repeat z-0 text-white" id="win1">
 			<div class="w-full h-full p-0 m-0" style="background-color: rgba(111, 57, 150, 0.62);backdrop-filter: blur(5px);">
 				<div class="flex flex-col justify-center ml-auto h-2/3 w-7/12 p-6 relative" id="win1txt">
-					<h1 class="text-6xl mt-7 py-8">LifeCal</h1>
-					<div class="text-base">
+					<h1 class="text-6xl mt-7 py-8 px-0 lf-fade-left">LifeCal</h1>
+					<div class="text-base px-0 lf-fade-left">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 				</div>
