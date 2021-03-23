@@ -1,7 +1,16 @@
 $(window).on('scroll', _.throttle(lfparallax, 50));
 $(window).on('scroll', _.throttle(lfscan, 200));
+$(function(){
+	$(".lf-fade-left-title").each(function(){
+		if($(this).css('opacity')==0){
+			$(this).animate({
+				opacity:1,
+				left:"-=1rem"
+			},400);
+		}
+	})
+});
 function lfparallax(){
-		console.log("throttlers here");
 		var scrollTop = $(window).scrollTop()
 		if(scrollTop > $("#title").height()){
 			$("#title").css("background-color",'rgb(255,255,255)')
