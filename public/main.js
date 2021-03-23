@@ -1,5 +1,5 @@
-$(window).on('scroll', _.throttle(lfparallax, 200));
-$(window).on('scroll', _.throttle(lfscan, 400));
+$(window).on('scroll', _.throttle(lfparallax, 50));
+$(window).on('scroll', _.throttle(lfscan, 200));
 function lfparallax(){
 		console.log("throttlers here");
 		var scrollTop = $(window).scrollTop()

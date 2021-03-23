@@ -4,7 +4,7 @@
 ### _The ultimate modern journalling app_   
 
 > Life's worth journalling...
-> Record your life in Life's Calendar - *LifeCal*
+> Record your life with Life's Calendar - *LifeCal*
 
 #### Features
 This multiplatform app provides easy and organized way of recording you precious life ;)
