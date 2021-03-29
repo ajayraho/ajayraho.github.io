@@ -1,4 +1,4 @@
-$(window).on('scroll', _.throttle(lfparallax, 50));
+$(window).on('scroll', _.throttle(lfparallax, 20));
 $(window).on('scroll', _.throttle(lfscan, 200));
 $(function(){
 	$(".lf-fade-left-title").each(function(){
@@ -9,6 +9,15 @@ $(function(){
 			},400);
 		}
 	})
+	$(".lf-icns").each(function(){
+		$(this).hover(function(){
+			$(this).find(".lf-icns-reg").css("display","none");
+			$(this).find(".lf-icns-hov").css("display","block");
+		}, function(){
+			$(this).find(".lf-icns-reg").css("display","block");
+			$(this).find(".lf-icns-hov").css("display","none");
+		})
+	});
 });
 function lfparallax(){
 		var scrollTop = $(window).scrollTop()
